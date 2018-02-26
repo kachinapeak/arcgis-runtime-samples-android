@@ -64,13 +64,13 @@ public class MainActivity extends AppCompatActivity {
     mSceneView.getAnalysisOverlays().add(mAnalysisOverlay);
 
     // add a camera and initial camera position
-    Camera camera = new Camera(new Point(-73.10861935949697, -49.25758493899104, 3050), 106, 73, 0);
+    Camera camera = new Camera(new Point(-106.461412, 35.020695, 2500), 90, 73, 0);
     mSceneView.setViewpointCamera(camera);
 
     // set the visible and obstructed colors (default would be green/red)
     // these are static properties that apply to all line of sight analyses in the scene view
-    LineOfSight.setVisibleColor(Color.CYAN);
-    LineOfSight.setObstructedColor(Color.MAGENTA);
+    LineOfSight.setVisibleColor(Color.GREEN);
+    LineOfSight.setObstructedColor(Color.RED);
 
     mSceneView.setOnTouchListener(new DefaultSceneViewOnTouchListener(mSceneView) {
       @Override public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
