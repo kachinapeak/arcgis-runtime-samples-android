@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
   private static final String TAG = MainActivity.class.getSimpleName();
   // initial values
-  private static final int mInitHeading = 0;
+  private static final int mInitHeading = 75;
   private static final int mInitPitch = 60;
-  private static final int mInitHorizontalAngle = 75;
+  private static final int mInitHorizontalAngle = 90;
   private static final int mInitVerticalAngle = 90;
   private static final int mInitMinDistance = 0;
-  private static final int mInitMaxDistance = 1500;
+  private static final int mInitMaxDistance = 500;
   private SceneView mSceneView;
   private LocationViewshed mViewshed;
   private int mMinDistance;
@@ -99,13 +99,13 @@ public class MainActivity extends AppCompatActivity {
 
     // create viewshed from location
     Point location = new Point(-4.50, 48.4, 100.0);
-    Viewshed.setFrustumOutlineColor(Color.BLUE);
+    Viewshed.setFrustumOutlineColor(Color.MAGENTA);
     mViewshed = new LocationViewshed(location, mInitHeading, mInitPitch, mInitHorizontalAngle, mInitVerticalAngle,
         mInitMinDistance, mInitMaxDistance);
     mViewshed.setFrustumOutlineVisible(true);
 
     // add a camera and set it to orbit the location point
-    Camera camera = new Camera(location, 20000000, 0, 55, 0);
+    Camera camera = new Camera(location, 20000000, 180, 55, 0);
     OrbitLocationCameraController orbitCamera = new OrbitLocationCameraController(location, 5000);
     mSceneView.setCameraController(orbitCamera);
     mSceneView.setViewpointCamera(camera);
